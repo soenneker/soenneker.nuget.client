@@ -1,4 +1,6 @@
 using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Soenneker.NuGet.Client.Abstract;
 
@@ -7,4 +9,5 @@ namespace Soenneker.NuGet.Client.Abstract;
 /// </summary>
 public interface INuGetClient : IDisposable, IAsyncDisposable
 {
+    ValueTask<HttpClient> Get();
 }
