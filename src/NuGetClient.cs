@@ -28,10 +28,10 @@ public class NuGetClient : INuGetClient
         _httpClientCache.RemoveSync(nameof(NuGetClient));
     }
 
-    public async ValueTask DisposeAsync()
+    public ValueTask DisposeAsync()
     {
         GC.SuppressFinalize(this);
 
-        await _httpClientCache.Remove(nameof(NuGetClient));
+        return _httpClientCache.Remove(nameof(NuGetClient));
     }
 }
