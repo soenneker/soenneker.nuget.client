@@ -1,5 +1,6 @@
 using System;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Soenneker.NuGet.Client.Abstract;
 using Soenneker.Utils.HttpClientCache.Abstract;
@@ -16,9 +17,9 @@ public class NuGetClient : INuGetClient
         _httpClientCache = httpClientCache;
     }
 
-    public ValueTask<HttpClient> Get()
+    public ValueTask<HttpClient> Get(CancellationToken cancellationToken = default)
     {
-        return _httpClientCache.Get(nameof(NuGetClient));
+        return _httpClientCache.Get(nameof(NuGetClient), cancellationToken: cancellationToken);
     }
 
     public void Dispose()
