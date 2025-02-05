@@ -13,18 +13,20 @@ public static class NuGetClientRegistrar
     /// <summary>
     /// Adds <see cref="INuGetClient"/> as a singleton service. <para/>
     /// </summary>
-    public static void AddNuGetClientAsSingleton(this IServiceCollection services)
+    public static IServiceCollection AddNuGetClientAsSingleton(this IServiceCollection services)
     {
-        services.AddHttpClientCache();
-        services.TryAddSingleton<INuGetClient, NuGetClient>();
+        services.AddHttpClientCacheAsSingleton().TryAddSingleton<INuGetClient, NuGetClient>();
+
+        return services;
     }
 
     /// <summary>
     /// Adds <see cref="INuGetClient"/> as a scoped service. <para/>
     /// </summary>
-    public static void AddNuGetClientAsScoped(this IServiceCollection services)
+    public static IServiceCollection AddNuGetClientAsScoped(this IServiceCollection services)
     {
-        services.AddHttpClientCache();
-        services.TryAddScoped<INuGetClient, NuGetClient>();
+        services.AddHttpClientCacheAsSingleton().TryAddScoped<INuGetClient, NuGetClient>();
+
+        return services;
     }
 }
