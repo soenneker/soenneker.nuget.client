@@ -1,4 +1,4 @@
-# Contributing to Soenneker.NuGet.Client
+﻿# Contributing to Soenneker.NuGet.Client
 
 We're excited that you're interested in contributing!
 
