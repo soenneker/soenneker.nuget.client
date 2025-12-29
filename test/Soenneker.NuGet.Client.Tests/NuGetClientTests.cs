@@ -14,4 +14,9 @@ public class NuGetClientTests : FixturedUnitTest
     {
         _util = Resolve<INuGetClient>(true);
     }
+
+    [Fact]
+    public void Default()
+    {
+    }
 }
