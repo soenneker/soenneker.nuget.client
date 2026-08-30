@@ -6,7 +6,7 @@ using Soenneker.Utils.HttpClientCache.Registrar;
 namespace Soenneker.NuGet.Client.Registrars;
 
 /// <summary>
-/// An async thread-safe HTTP client for the NuGet API
+/// Registers the shared NuGet HTTP client accessor.
 /// </summary>
 public static class NuGetClientRegistrar
 {

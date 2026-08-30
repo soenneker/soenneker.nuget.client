@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>An async thread-safe HTTP client for the NuGet API</Description>
+        <Description>Provides access to a shared HTTP client for NuGet protocol requests.</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.NuGet.Client</AssemblyName>

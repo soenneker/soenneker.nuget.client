@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 namespace Soenneker.NuGet.Client.Abstract;
 
 /// <summary>
-/// An async thread-safe HTTP client for the NuGet API
+/// Provides access to a shared HTTP client used for NuGet protocol requests.
 /// </summary>
 public interface INuGetClient : IDisposable, IAsyncDisposable
 {
     /// <summary>
-    /// Returns the configured http Client used by the nu get client.
+    /// Returns the shared HTTP client used for NuGet protocol requests.
     /// </summary>
     /// <param name="cancellationToken">Token used to cancel the operation.</param>
-    /// <returns>A task whose result is the requested http Client.</returns>
+    /// <returns>A task whose result is the shared HTTP client. The caller must not dispose it.</returns>
     ValueTask<HttpClient> Get(CancellationToken cancellationToken = default);
 }
