@@ -6,6 +6,7 @@ using Soenneker.Utils.HttpClientCache.Abstract;
 
 namespace Soenneker.NuGet.Client;
 
+/// <inheritdoc cref="INuGetClient" />
 public sealed class NuGetClient : INuGetClient
 {
     private readonly IHttpClientCache _httpClientCache;
